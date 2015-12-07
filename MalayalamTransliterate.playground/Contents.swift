@@ -56,7 +56,7 @@ var letterMappings : [String : Sounds] = [
     "k"     : Sounds(letters:["ക"] ,vowels:[]) ,
     "kh"    : Sounds(letters:["ഖ"] ,vowels:[]) ,
     "g"     : Sounds(letters:["ഗ"] ,vowels:[]) ,
-    "gh"    : Sounds(letters:["ഘ"] ,vowels:[]) ,
+    "gh"    : Sounds(letters:["ഘ"] ,vowels:[] ) ,
     "ng"    : Sounds(letters:["ങ","ങ്ങ","ങ്ക"] ,vowels:[]) ,
     "ch"    :Sounds(letters:["ച","ച്ച"] ,vowels:[]) ,
     "chh"   : Sounds(letters:["ഛ"] ,vowels:[]) ,
@@ -136,7 +136,7 @@ func longestMatch(str : String)->(String?,String)
 
 
 
-var manglish : String = "puli"
+var manglish : String = "maanga"
 
 
 var matches : [String] = []
