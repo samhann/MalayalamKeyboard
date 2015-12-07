@@ -4,7 +4,7 @@ import UIKit
 
 var str = "Hello, playground"
 
-
+// THESE have not been mapped ....
 
 //, "ഝ":
 
@@ -17,6 +17,18 @@ var str = "Hello, playground"
 //"ം":
 // "ൗ": "9"
 
+// make a set of all valid malayalam words .... 
+
+var wordSet = Set<String>()
+
+
+if let path = NSBundle.mainBundle().pathForResource("mal_words", ofType: "txt"){
+    var data = try! NSString(contentsOfFile: path, encoding: NSUTF8StringEncoding)
+
+    let myStrings = data.componentsSeparatedByCharactersInSet(NSCharacterSet.newlineCharacterSet())
+    wordSet = Set(myStrings)
+    
+    }
 
 struct Sounds {
     
@@ -121,10 +133,10 @@ func longestMatch(str : String)->(String?,String)
     
 }
 
-print(longestMatch("zh"))
 
 
-var manglish : String = "thaaravu"
+
+var manglish : String = "puli"
 
 
 var matches : [String] = []
@@ -143,7 +155,7 @@ while (true) {
 }
 
 
-var malayalamString = ""
+
 print(matches)
 
 
@@ -199,5 +211,7 @@ func flattenLists(var list : [[String]])->[String]
 
 var allMatches = flattenLists(matchedLists)
 
-print(allMatches)
+var validMatches = allMatches.filter { wordSet.contains($0)}
+
+print(validMatches)
 
