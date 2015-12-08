@@ -1,0 +1,11 @@
+Breakpoints_v2.xcbkptlist
+UserInterfaceState.xcuserstate
+.DS_Store
+
+CareSDK.xccheckout
+CareSDK.xcodeproj/project.xcworkspace/xcuserdata/
+CareSDK/build
+CareSDK.xcodeproj/xcuserdata
+*.xcuserdatad
+
+.idea
