@@ -135,50 +135,67 @@ func longestMatch(str : String)->(String?,String)
 }
 
 
-
-var consonantRegex = "([bcdfghjklmnpqrstvwxz])([bcdfghjklmnpqrstvwxz])"
-var manglish : String = "komali"
-
-var manglishTwo : String = manglish.stringByReplacingOccurrencesOfString("am$", withString: "$", options: NSStringCompareOptions.RegularExpressionSearch, range: manglish.startIndex ..< manglish.endIndex)
+func preprocessWord(word : String) -> String
+{
+    let consonantRegex = "([bcdfghjklmnpqrstvwxz])([bcdfghjklmnpqrstvwxz])"
+    let manglish : String = word
     
-var manglishThree : String = manglishTwo.stringByReplacingOccurrencesOfString(consonantRegex, withString: "$1u$2", options: NSStringCompareOptions.RegularExpressionSearch, range: manglishTwo.startIndex ..< manglishTwo.endIndex)
-
-
-
-var matches : [String] = []
-var theString = manglishThree
-
-while (true) {
-    var (match , rest) = longestMatch(theString)
+    let manglishTwo : String = manglish.stringByReplacingOccurrencesOfString("am$", withString: "$", options: NSStringCompareOptions.RegularExpressionSearch, range: manglish.startIndex ..< manglish.endIndex)
     
-    if let theMatch = match {
-        matches.append(theMatch)
-        theString = rest
-    }
-    else {
-        break;
-    }
+    let manglishThree : String = manglishTwo.stringByReplacingOccurrencesOfString(consonantRegex, withString: "$1u$2", options: NSStringCompareOptions.RegularExpressionSearch, range: manglishTwo.startIndex ..< manglishTwo.endIndex)
+
+    return manglishThree
 }
 
 
 
-print(matches)
 
-
-var matchedLists  : [[String]] = []
-
-for (index,match) in matches.enumerate() {
+func splitIntoMalluComponents(var theWord : String)->[String]
+{
+    var matches : [String] = []
+    var theString = preprocessWord(theWord)
     
-    var mapping = letterMappings[match]!
+    while (true) {
+        var (match , rest) = longestMatch(theString)
+        
+        if let theMatch = match {
+            matches.append(theMatch)
+            theString = rest
+        }
+        else {
+            break;
+        }
+    }
     
-    // for first letter we can use the letter for a as in amma .. but in between the words we use vowel sound if its available
-    if (mapping.vowels.count != 0 && index > 0) {
-        matchedLists.append(mapping.vowels)
-    }
-    else {
-        matchedLists.append(mapping.letters)
-    }
+
+    return matches
 }
+
+
+
+
+
+
+func listOfListsForSounds(var matches : [String])->[[String]]
+{
+    var matchedLists  : [[String]] = []
+    
+    for (index,match) in matches.enumerate() {
+        
+        var mapping = letterMappings[match]!
+        
+        // for first letter we can use the letter for a as in amma .. but in between the words we use vowel sound if its available
+        if (mapping.vowels.count != 0 && index > 0) {
+            matchedLists.append(mapping.vowels)
+        }
+        else {
+            matchedLists.append(mapping.letters)
+        }
+    }
+
+    return matchedLists
+}
+
 
 
 func flattenLists(var list : [[String]])->[String]
@@ -215,9 +232,17 @@ func flattenLists(var list : [[String]])->[String]
 
 }
 
-var allMatches = flattenLists(matchedLists)
 
-var validMatches = allMatches.filter { wordSet.contains($0)}
+func convertToManglishToPossibleWords(var manglish: String)->[String]
+{
+    let matches = splitIntoMalluComponents(manglish)
+    let listOfLists = listOfListsForSounds(matches)
+    let possibleWords = flattenLists(listOfLists)
+    let validWords    = possibleWords.filter({ wordSet.contains($0)})
+    
+    return validWords
+}
 
-print(validMatches)
+
+print(convertToManglishToPossibleWords("komali"))
 
