@@ -1,23 +1,7 @@
-//: Playground - noun: a place where people can play
+//: MANGLISH TO MALAYALAM :
 
 import UIKit
-
-var str = "Hello, playground"
-
-// THESE have not been mapped ....
-
-//, "ഝ":
-
-
-
-//"്രി": "R",
-//"്രു": "R",
-
-//, "ഃ":
-//"ം":
-// "ൗ": "9"
-
-// make a set of all valid malayalam words .... 
+// make a set of all valid malayalam words ....
 
 var wordSet = Set<String>()
 
@@ -47,7 +31,7 @@ var letterMappings : [String : Sounds] = [
     "ai"    : Sounds(letters: ["ഐ"], vowels: ["ൈ"]),
     "i"     : Sounds(letters: ["ഇ"], vowels: ["ി"]),
     "ee"    : Sounds(letters: ["ഈ"], vowels: ["ീ"]),
-    "u"     : Sounds(letters: ["ഉ"], vowels: ["ു","്"]),
+    "u"     : Sounds(letters: ["ഉ"], vowels: ["ു","്","ൂ"]),
     "oo"    : Sounds(letters: ["ഊ"], vowels: ["ൂ"]),
     "o"     : Sounds(letters: ["ഒ","ഓ"], vowels: ["ോ","ൊ"]),
     "ou"    : Sounds(letters: ["ഔ"], vowels: ["ീ"]),
@@ -64,9 +48,9 @@ var letterMappings : [String : Sounds] = [
     "nj"    : Sounds(letters:["ഞ","ഞ്ഞ"] ,vowels:[]),
     "d"     : Sounds(letters:["ട","ഢ","ഡ","ദ","ധ"] ,vowels:[]) ,
     "dh"    : Sounds(letters:["ഡ","ദ","ധ","ദ്ധ"] , vowels:[]) ,
-    "n"     : Sounds(letters:["ണ","ന","ൺ"] ,vowels:[]) ,
+    "n"     : Sounds(letters:["ണ","ന","ൺ","൯"] ,vowels:[]) ,
     "f"     : Sounds(letters:["ഫ"] ,vowels:[]) ,
-    "t"     : Sounds(letters:["ഠ"] ,vowels:[]) ,
+    "t"     : Sounds(letters:["ഠ","ട്ട"] ,vowels:[]) ,
     "th"    : Sounds(letters:["ത","ഥ","ദ"] ,vowels:[]) ,
     "p"     : Sounds(letters:["പ"] ,vowels:[]) ,
     "bh"    : Sounds(letters:["ഭ"] ,vowels:[]) , "y" :Sounds(letters:["യ"] ,vowels:[]) ,
@@ -135,22 +119,40 @@ func longestMatch(str : String)->(String?,String)
 }
 
 
+
+
 func preprocessWord(word : String) -> String
 {
     let consonantRegex = "([bcdfghjklmnpqrstvwxz])([bcdfghjklmnpqrstvwxz])"
     let manglish : String = word
     
-    let manglishTwo : String = manglish.stringByReplacingOccurrencesOfString("am$", withString: "$", options: NSStringCompareOptions.RegularExpressionSearch, range: manglish.startIndex ..< manglish.endIndex)
+    var manglishTwo : String = manglish.stringByReplacingOccurrencesOfString("am$", withString: "$", options: NSStringCompareOptions.RegularExpressionSearch, range: manglish.startIndex ..< manglish.endIndex)
     
-    let manglishThree : String = manglishTwo.stringByReplacingOccurrencesOfString(consonantRegex, withString: "$1u$2", options: NSStringCompareOptions.RegularExpressionSearch, range: manglishTwo.startIndex ..< manglishTwo.endIndex)
+    
+    let range = manglishTwo.rangeOfString(consonantRegex, options: .RegularExpressionSearch)
+    
+    
+    if let matchedRange = range {
+        
+        let match = manglishTwo[matchedRange]
+        
+        if letterMappings[match] == nil {
+            manglishTwo = manglishTwo.stringByReplacingOccurrencesOfString(consonantRegex, withString: "$1u$2", options: NSStringCompareOptions.RegularExpressionSearch, range: manglishTwo.startIndex ..< manglishTwo.endIndex)
 
-    return manglishThree
+        }
+    }
+    
+
+    
+    
+
+    return manglishTwo
 }
 
 
 
 
-func splitIntoMalluComponents(var theWord : String)->[String]
+func splitIntoMalluComponents(let theWord : String)->[String]
 {
     var matches : [String] = []
     var theString = preprocessWord(theWord)
@@ -176,7 +178,7 @@ func splitIntoMalluComponents(var theWord : String)->[String]
 
 
 
-func listOfListsForSounds(var matches : [String])->[[String]]
+func listOfListsForSounds(let matches : [String])->[[String]]
 {
     var matchedLists  : [[String]] = []
     
@@ -233,16 +235,31 @@ func flattenLists(var list : [[String]])->[String]
 }
 
 
-func convertToManglishToPossibleWords(var manglish: String)->[String]
+func convertToManglishToPossibleWords(let manglish: String)->[String]
 {
     let matches = splitIntoMalluComponents(manglish)
     let listOfLists = listOfListsForSounds(matches)
     let possibleWords = flattenLists(listOfLists)
-    let validWords    = possibleWords.filter({ wordSet.contains($0)})
+    let validWords    = possibleWords.filter { wordSet.contains($0) }
     
     return validWords
 }
 
 
-print(convertToManglishToPossibleWords("komali"))
+print(convertToManglishToPossibleWords("njaan"))
 
+
+// TODO
+
+// THESE have not been mapped ....
+
+//, "ഝ":
+
+
+
+//"്രി": "R",
+//"്രു": "R",
+
+//, "ഃ":
+//"ം":
+// "ൗ": "9"
