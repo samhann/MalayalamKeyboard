@@ -39,7 +39,7 @@ struct Sounds {
 
 var letterMappings : [String : Sounds] = [
 
-    "a"     : Sounds(letters: ["അ"], vowels: [""]),
+    "a"     : Sounds(letters: ["അ"], vowels: ["","ാ"]),
     "aa"    : Sounds(letters: ["ആ"], vowels: ["ാ"]),
     "m"     : Sounds(letters: ["മ"], vowels: []),
     "b"     : Sounds(letters: ["ബ"], vowels: []),
@@ -48,7 +48,7 @@ var letterMappings : [String : Sounds] = [
     "i"     : Sounds(letters: ["ഇ"], vowels: ["ി"]),
     "ee"    : Sounds(letters: ["ഈ"], vowels: ["ീ"]),
     "u"     : Sounds(letters: ["ഉ"], vowels: ["ു","്"]),
-    "oo"    : Sounds(letters: ["ഊ"], vowels: []),
+    "oo"    : Sounds(letters: ["ഊ"], vowels: ["ൂ"]),
     "o"     : Sounds(letters: ["ഒ","ഓ"], vowels: ["ോ","ൊ"]),
     "ou"    : Sounds(letters: ["ഔ"], vowels: ["ീ"]),
     "r"     : Sounds(letters: ["റ","ഋ","ർ","ര"], vowels: []),
@@ -98,7 +98,8 @@ var letterMappings : [String : Sounds] = [
     "yy"    :Sounds(letters:["യ്യ"] ,vowels:[]) ,
     "shsh"  : Sounds(letters:["ശ്ശ"] ,vowels:[]) ,
     "ss"    : Sounds(letters:["സ്സ"] ,vowels:[]) ,
-    "nch"   : Sounds(letters:["ഞ്ച"] ,vowels:[])
+    "nch"   : Sounds(letters:["ഞ്ച"] ,vowels:[]),
+    "$"     : Sounds(letters: ["ം"], vowels: [])
     
 ]
 
@@ -135,12 +136,17 @@ func longestMatch(str : String)->(String?,String)
 
 
 
+var consonantRegex = "([bcdfghjklmnpqrstvwxz])([bcdfghjklmnpqrstvwxz])"
+var manglish : String = "komali"
 
-var manglish : String = "maanga"
+var manglishTwo : String = manglish.stringByReplacingOccurrencesOfString("am$", withString: "$", options: NSStringCompareOptions.RegularExpressionSearch, range: manglish.startIndex ..< manglish.endIndex)
+    
+var manglishThree : String = manglishTwo.stringByReplacingOccurrencesOfString(consonantRegex, withString: "$1u$2", options: NSStringCompareOptions.RegularExpressionSearch, range: manglishTwo.startIndex ..< manglishTwo.endIndex)
+
 
 
 var matches : [String] = []
-var theString = manglish
+var theString = manglishThree
 
 while (true) {
     var (match , rest) = longestMatch(theString)
