@@ -33,6 +33,10 @@
 		ECD0F4891C170D2E00262128 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD0F4861C170D2E00262128 /* Utilities.swift */; };
 		ECD0F48A1C170D2E00262128 /* Catboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD0F4871C170D2E00262128 /* Catboard.swift */; };
 		ECD0F48B1C170D2E00262128 /* CatboardBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD0F4881C170D2E00262128 /* CatboardBanner.swift */; };
+		ECD0F48F1C1754B200262128 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECD0F48E1C1754B200262128 /* Media.xcassets */; };
+		ECD0F4911C1757AA00262128 /* ManglishKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD0F4901C1757AA00262128 /* ManglishKeyboard.swift */; };
+		ECD0F4951C17610000262128 /* Translator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD0F4941C17610000262128 /* Translator.swift */; };
+		ECD0F4991C17614400262128 /* mal_words.txt in Resources */ = {isa = PBXBuildFile; fileRef = ECD0F4981C17614400262128 /* mal_words.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +112,10 @@
 		ECD0F4861C170D2E00262128 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		ECD0F4871C170D2E00262128 /* Catboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Catboard.swift; sourceTree = "<group>"; };
 		ECD0F4881C170D2E00262128 /* CatboardBanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatboardBanner.swift; sourceTree = "<group>"; };
+		ECD0F48E1C1754B200262128 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		ECD0F4901C1757AA00262128 /* ManglishKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManglishKeyboard.swift; sourceTree = "<group>"; };
+		ECD0F4941C17610000262128 /* Translator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Translator.swift; sourceTree = "<group>"; };
+		ECD0F4981C17614400262128 /* mal_words.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mal_words.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +211,8 @@
 				ECD0F4651C170CD900262128 /* Utility */,
 				ECD0F4661C170CD900262128 /* Views */,
 				ECD0F45B1C16F7E200262128 /* Info.plist */,
+				ECD0F4981C17614400262128 /* mal_words.txt */,
+				ECD0F48E1C1754B200262128 /* Media.xcassets */,
 			);
 			path = Manglish;
 			sourceTree = "<group>";
@@ -214,6 +224,8 @@
 				ECD0F4691C170CFB00262128 /* KeyboardInputTraits.swift */,
 				ECD0F46A1C170CFB00262128 /* KeyboardLayout.swift */,
 				ECD0F46B1C170CFB00262128 /* ForwardingView.swift */,
+				ECD0F4901C1757AA00262128 /* ManglishKeyboard.swift */,
+				ECD0F4941C17610000262128 /* Translator.swift */,
 				ECD0F4671C170CF800262128 /* Manglish-Bridging-Header.h */,
 			);
 			path = Controller;
@@ -406,6 +418,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECD0F48F1C1754B200262128 /* Media.xcassets in Resources */,
+				ECD0F4991C17614400262128 /* mal_words.txt in Resources */,
 				ECD0F4841C170D1A00262128 /* DefaultSettings.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -449,6 +463,7 @@
 				ECD0F48B1C170D2E00262128 /* CatboardBanner.swift in Sources */,
 				ECD0F4741C170D0900262128 /* DefaultKeyboard.swift in Sources */,
 				ECD0F46F1C170CFC00262128 /* ForwardingView.swift in Sources */,
+				ECD0F4951C17610000262128 /* Translator.swift in Sources */,
 				ECD0F47F1C170D1A00262128 /* ImageKey.swift in Sources */,
 				ECD0F4751C170D0900262128 /* DirectionEnum.swift in Sources */,
 				ECD0F4851C170D1A00262128 /* Shapes.swift in Sources */,
@@ -457,6 +472,7 @@
 				ECD0F4831C170D1A00262128 /* DefaultSettings.swift in Sources */,
 				ECD0F46D1C170CFC00262128 /* KeyboardInputTraits.swift in Sources */,
 				ECD0F47E1C170D1A00262128 /* KeyboardKey.swift in Sources */,
+				ECD0F4911C1757AA00262128 /* ManglishKeyboard.swift in Sources */,
 				ECD0F4801C170D1A00262128 /* KeyboardKeyBackground.swift in Sources */,
 				ECD0F46C1C170CFB00262128 /* KeyboardViewController.swift in Sources */,
 			);

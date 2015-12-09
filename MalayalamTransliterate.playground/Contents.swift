@@ -246,7 +246,7 @@ func convertToManglishToPossibleWords(let manglish: String)->[String]
 }
 
 
-print(convertToManglishToPossibleWords("njaan"))
+print(convertToManglishToPossibleWords("njan"))
 
 
 // TODO

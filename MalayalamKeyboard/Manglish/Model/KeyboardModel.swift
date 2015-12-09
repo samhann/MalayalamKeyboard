@@ -54,7 +54,7 @@ class Page {
     
     func addKey(key: Key, row: Int) {
         if self.rows.count <= row {
-            for i in self.rows.count...row {
+            for _ in self.rows.count...row {
                 self.rows.append([])
             }
         }
