@@ -10,6 +10,9 @@ import UIKit
 
 class ManglishKeyboard: KeyboardViewController {
     
+    var currentWord : String = ""
+    var previousInsert :String = ""
+    
     override func setupKeys() {
         super.setupKeys()
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) { () -> Void in
@@ -21,56 +24,44 @@ class ManglishKeyboard: KeyboardViewController {
         
         let keyOutput = key.outputForCase(self.shiftState.uppercase())
         
-//        if !NSUserDefaults.standardUserDefaults().boolForKey(kCatTypeEnabled) {
-//            textDocumentProxy.insertText(keyOutput)
-//            return
-//        }
+        currentWord += keyOutput
         
-        if key.type == .Character || key.type == .SpecialCharacter {
-            let context = textDocumentProxy.documentContextBeforeInput
-            if context != nil {
+        if key.type == .Character || key.type == .SpecialCharacter || key.type == .Space {
+            
+            if key.type == .Space {
+                currentWord = ""
+                previousInsert = ""
+                textDocumentProxy.insertText(" ")
+            }
+            
+            let possibleWords = Translator.sharedInstance.convertToManglishToPossibleWords(currentWord)
                 
-                let possibleWords = Translator.sharedInstance.convertToManglishToPossibleWords(context!)
+            if possibleWords.count > 0 {
                 
-                if possibleWords.count > 0{
-                    textDocumentProxy.insertText(possibleWords.first!)
+                if(previousInsert.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) > 0) {
 
-                }else{
-                    textDocumentProxy.insertText(keyOutput)
+                   var string = textDocumentProxy.documentContextBeforeInput!
+                    var lastChar = string.characters.last
+                    
+                    while(lastChar != " ") {
+                        textDocumentProxy.deleteBackward()
+                        string = textDocumentProxy.documentContextBeforeInput ?? " "
+                        lastChar = string.characters.last
+
+                    }
+                    
                 }
-//                if context!.characters.count < 2 {
-//                    textDocumentProxy.insertText(keyOutput)
-//                    return
-//                }
-//                
-//                var index = context!.endIndex
-//                
-//                index = index.predecessor()
-//                if context![index] != " " {
-//                    textDocumentProxy.insertText(keyOutput)
-//                    return
-//                }
-//                
-//                index = index.predecessor()
-//                if context![index] == " " {
-//                    textDocumentProxy.insertText(keyOutput)
-//                    return
-//                }
-//                
-//                textDocumentProxy.insertText("\(randomCat())")
-//                textDocumentProxy.insertText(" ")
-//                textDocumentProxy.insertText(keyOutput)
-                return
+                    textDocumentProxy.insertText(possibleWords.first!)
+                    previousInsert = possibleWords.first!
             }
-            else {
-                textDocumentProxy.insertText(keyOutput)
-                return
-            }
-        }
-        else {
-            textDocumentProxy.insertText(keyOutput)
-            return
-        }
+            
+            
+          
+
+       }
+        
+        
+       
     }
     func randomCat() -> String {
         let cats = "🐱😺😸😹😽😻😿😾😼🙀"
