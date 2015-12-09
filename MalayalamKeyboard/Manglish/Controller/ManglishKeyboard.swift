@@ -54,26 +54,6 @@ class ManglishKeyboard: KeyboardViewController {
                     textDocumentProxy.insertText(possibleWords.first!)
                     previousInsert = possibleWords.first!
             }
-            
-            
-          
-
        }
-        
-        
-       
     }
-    func randomCat() -> String {
-        let cats = "🐱😺😸😹😽😻😿😾😼🙀"
-        
-        let numCats = cats.characters.count
-        let randomCat = arc4random() % UInt32(numCats)
-        
-        let index = cats.startIndex.advancedBy(Int(randomCat))
-        let character = cats[index]
-        
-        return String(character)
-    }
-    
-    
 }
