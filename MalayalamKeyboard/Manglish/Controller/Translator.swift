@@ -248,8 +248,9 @@ class Translator: NSObject {
         let matches = splitIntoMalluComponents(manglish)
         let listOfLists = listOfListsForSounds(matches)
         let possibleWords = flattenLists(listOfLists)
-//        let validWords    = possibleWords.filter { wordSet.contains($0) }
-        
-        return possibleWords
+        let validWords    = possibleWords.filter { wordSet.contains($0) }
+
+        return (validWords.count == 0) ? possibleWords : validWords
+
     }
 }

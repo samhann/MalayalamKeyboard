@@ -26,9 +26,9 @@ class ManglishKeyboard: KeyboardViewController {
         
         currentWord += keyOutput
         
-        if key.type == .Character || key.type == .SpecialCharacter || key.type == .Space {
+        if key.type == .Character || key.type == .SpecialCharacter || key.type == .Space || key.type == .Backspace{
             
-            if key.type == .Space {
+            if key.type == .Space || key.type == .Backspace {
                 currentWord = ""
                 previousInsert = ""
                 textDocumentProxy.insertText(" ")
