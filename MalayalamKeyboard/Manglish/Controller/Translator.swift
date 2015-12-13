@@ -61,7 +61,8 @@ class Translator: NSObject {
         "t"     : Sounds(letters:["ഠ","ട്ട"] ,vowels:[]) ,
         "th"    : Sounds(letters:["ത","ഥ","ദ"] ,vowels:[]) ,
         "p"     : Sounds(letters:["പ"] ,vowels:[]) ,
-        "bh"    : Sounds(letters:["ഭ"] ,vowels:[]) , "y" :Sounds(letters:["യ"] ,vowels:[]) ,
+        "bh"    : Sounds(letters:["ഭ"] ,vowels:[]) ,
+        "y"     :Sounds(letters:["യ"] ,vowels:[]) ,
         "l"     :Sounds(letters:["ല","ള","ൾ"] ,vowels:[]) ,
         "v"     : Sounds(letters:["വ"] ,vowels:[]) ,
         "w"     : Sounds(letters:["വ"] ,vowels:[]) ,
@@ -91,7 +92,8 @@ class Translator: NSObject {
         "shsh"  : Sounds(letters:["ശ്ശ"] ,vowels:[]) ,
         "ss"    : Sounds(letters:["സ്സ"] ,vowels:[]) ,
         "nch"   : Sounds(letters:["ഞ്ച"] ,vowels:[]),
-        "$"     : Sounds(letters: ["ം"], vowels: [])
+        "$"     : Sounds(letters: ["ം"], vowels: []),
+        "au"    : Sounds(letters: [], vowels: ["ൗ"])
         
     ]
     
