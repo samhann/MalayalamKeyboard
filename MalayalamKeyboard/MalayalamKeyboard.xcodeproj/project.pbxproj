@@ -37,6 +37,16 @@
 		ECD0F4911C1757AA00262128 /* ManglishKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD0F4901C1757AA00262128 /* ManglishKeyboard.swift */; };
 		ECD0F4951C17610000262128 /* Translator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD0F4941C17610000262128 /* Translator.swift */; };
 		ECD0F4991C17614400262128 /* mal_words.txt in Resources */ = {isa = PBXBuildFile; fileRef = ECD0F4981C17614400262128 /* mal_words.txt */; };
+		ECF998B31C1D572C005DCEE2 /* TOMSSuggestionBar.m in Sources */ = {isa = PBXBuildFile; fileRef = ECF998A61C1D572C005DCEE2 /* TOMSSuggestionBar.m */; };
+		ECF998B41C1D572C005DCEE2 /* TOMSSuggestionBarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ECF998A81C1D572C005DCEE2 /* TOMSSuggestionBarCell.m */; };
+		ECF998B51C1D572C005DCEE2 /* TOMSSuggestionBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECF998AA1C1D572C005DCEE2 /* TOMSSuggestionBarController.m */; };
+		ECF998B61C1D572C005DCEE2 /* TOMSSuggestionBarLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = ECF998AC1C1D572C005DCEE2 /* TOMSSuggestionBarLayout.m */; };
+		ECF998B71C1D572C005DCEE2 /* TOMSSuggestionBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = ECF998AE1C1D572C005DCEE2 /* TOMSSuggestionBarView.m */; };
+		ECF998B81C1D572C005DCEE2 /* UIControl+TOMSSuggestionBar.m in Sources */ = {isa = PBXBuildFile; fileRef = ECF998B21C1D572C005DCEE2 /* UIControl+TOMSSuggestionBar.m */; };
+		ECF998C11C1D576A005DCEE2 /* NSString+Morphing.m in Sources */ = {isa = PBXBuildFile; fileRef = ECF998BC1C1D576A005DCEE2 /* NSString+Morphing.m */; };
+		ECF998C21C1D576A005DCEE2 /* TOMSMorphingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = ECF998BE1C1D576A005DCEE2 /* TOMSMorphingLabel.m */; };
+		ECF998C31C1D576A005DCEE2 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = ECF998BF1C1D576A005DCEE2 /* LICENSE */; };
+		ECF998C41C1D576A005DCEE2 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = ECF998C01C1D576A005DCEE2 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +126,26 @@
 		ECD0F4901C1757AA00262128 /* ManglishKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManglishKeyboard.swift; sourceTree = "<group>"; };
 		ECD0F4941C17610000262128 /* Translator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Translator.swift; sourceTree = "<group>"; };
 		ECD0F4981C17614400262128 /* mal_words.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mal_words.txt; sourceTree = "<group>"; };
+		ECF998A51C1D572C005DCEE2 /* TOMSSuggestionBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOMSSuggestionBar.h; sourceTree = "<group>"; };
+		ECF998A61C1D572C005DCEE2 /* TOMSSuggestionBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOMSSuggestionBar.m; sourceTree = "<group>"; };
+		ECF998A71C1D572C005DCEE2 /* TOMSSuggestionBarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOMSSuggestionBarCell.h; sourceTree = "<group>"; };
+		ECF998A81C1D572C005DCEE2 /* TOMSSuggestionBarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOMSSuggestionBarCell.m; sourceTree = "<group>"; };
+		ECF998A91C1D572C005DCEE2 /* TOMSSuggestionBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOMSSuggestionBarController.h; sourceTree = "<group>"; };
+		ECF998AA1C1D572C005DCEE2 /* TOMSSuggestionBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOMSSuggestionBarController.m; sourceTree = "<group>"; };
+		ECF998AB1C1D572C005DCEE2 /* TOMSSuggestionBarLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOMSSuggestionBarLayout.h; sourceTree = "<group>"; };
+		ECF998AC1C1D572C005DCEE2 /* TOMSSuggestionBarLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOMSSuggestionBarLayout.m; sourceTree = "<group>"; };
+		ECF998AD1C1D572C005DCEE2 /* TOMSSuggestionBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOMSSuggestionBarView.h; sourceTree = "<group>"; };
+		ECF998AE1C1D572C005DCEE2 /* TOMSSuggestionBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOMSSuggestionBarView.m; sourceTree = "<group>"; };
+		ECF998AF1C1D572C005DCEE2 /* TOMSSuggestionDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOMSSuggestionDataSource.h; sourceTree = "<group>"; };
+		ECF998B01C1D572C005DCEE2 /* TOMSSuggestionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOMSSuggestionDelegate.h; sourceTree = "<group>"; };
+		ECF998B11C1D572C005DCEE2 /* UIControl+TOMSSuggestionBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+TOMSSuggestionBar.h"; sourceTree = "<group>"; };
+		ECF998B21C1D572C005DCEE2 /* UIControl+TOMSSuggestionBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+TOMSSuggestionBar.m"; sourceTree = "<group>"; };
+		ECF998BB1C1D576A005DCEE2 /* NSString+Morphing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Morphing.h"; sourceTree = "<group>"; };
+		ECF998BC1C1D576A005DCEE2 /* NSString+Morphing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Morphing.m"; sourceTree = "<group>"; };
+		ECF998BD1C1D576A005DCEE2 /* TOMSMorphingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOMSMorphingLabel.h; sourceTree = "<group>"; };
+		ECF998BE1C1D576A005DCEE2 /* TOMSMorphingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOMSMorphingLabel.m; sourceTree = "<group>"; };
+		ECF998BF1C1D576A005DCEE2 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		ECF998C01C1D576A005DCEE2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +240,8 @@
 				ECD0F4641C170CD900262128 /* Model */,
 				ECD0F4651C170CD900262128 /* Utility */,
 				ECD0F4661C170CD900262128 /* Views */,
+				ECF998A41C1D572C005DCEE2 /* SuggestionBar */,
+				ECF998B91C1D576A005DCEE2 /* TOMSMorphingLabel */,
 				ECD0F45B1C16F7E200262128 /* Info.plist */,
 				ECD0F4981C17614400262128 /* mal_words.txt */,
 				ECD0F48E1C1754B200262128 /* Media.xcassets */,
@@ -264,6 +296,49 @@
 				ECD0F47D1C170D1A00262128 /* Shapes.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		ECF998A41C1D572C005DCEE2 /* SuggestionBar */ = {
+			isa = PBXGroup;
+			children = (
+				ECF998A51C1D572C005DCEE2 /* TOMSSuggestionBar.h */,
+				ECF998A61C1D572C005DCEE2 /* TOMSSuggestionBar.m */,
+				ECF998A71C1D572C005DCEE2 /* TOMSSuggestionBarCell.h */,
+				ECF998A81C1D572C005DCEE2 /* TOMSSuggestionBarCell.m */,
+				ECF998A91C1D572C005DCEE2 /* TOMSSuggestionBarController.h */,
+				ECF998AA1C1D572C005DCEE2 /* TOMSSuggestionBarController.m */,
+				ECF998AB1C1D572C005DCEE2 /* TOMSSuggestionBarLayout.h */,
+				ECF998AC1C1D572C005DCEE2 /* TOMSSuggestionBarLayout.m */,
+				ECF998AD1C1D572C005DCEE2 /* TOMSSuggestionBarView.h */,
+				ECF998AE1C1D572C005DCEE2 /* TOMSSuggestionBarView.m */,
+				ECF998AF1C1D572C005DCEE2 /* TOMSSuggestionDataSource.h */,
+				ECF998B01C1D572C005DCEE2 /* TOMSSuggestionDelegate.h */,
+				ECF998B11C1D572C005DCEE2 /* UIControl+TOMSSuggestionBar.h */,
+				ECF998B21C1D572C005DCEE2 /* UIControl+TOMSSuggestionBar.m */,
+			);
+			path = SuggestionBar;
+			sourceTree = "<group>";
+		};
+		ECF998B91C1D576A005DCEE2 /* TOMSMorphingLabel */ = {
+			isa = PBXGroup;
+			children = (
+				ECF998BA1C1D576A005DCEE2 /* Classes */,
+				ECF998BF1C1D576A005DCEE2 /* LICENSE */,
+				ECF998C01C1D576A005DCEE2 /* README.md */,
+			);
+			name = TOMSMorphingLabel;
+			path = SuggestionBar/TOMSMorphingLabel;
+			sourceTree = "<group>";
+		};
+		ECF998BA1C1D576A005DCEE2 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				ECF998BB1C1D576A005DCEE2 /* NSString+Morphing.h */,
+				ECF998BC1C1D576A005DCEE2 /* NSString+Morphing.m */,
+				ECF998BD1C1D576A005DCEE2 /* TOMSMorphingLabel.h */,
+				ECF998BE1C1D576A005DCEE2 /* TOMSMorphingLabel.m */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -420,6 +495,7 @@
 			files = (
 				ECD0F48F1C1754B200262128 /* Media.xcassets in Resources */,
 				ECD0F4991C17614400262128 /* mal_words.txt in Resources */,
+				ECF998C31C1D576A005DCEE2 /* LICENSE in Resources */,
 				ECD0F4841C170D1A00262128 /* DefaultSettings.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -456,23 +532,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECF998B41C1D572C005DCEE2 /* TOMSSuggestionBarCell.m in Sources */,
 				ECD0F4731C170D0900262128 /* KeyboardModel.swift in Sources */,
 				ECD0F4821C170D1A00262128 /* ExtraView.swift in Sources */,
 				ECD0F46E1C170CFC00262128 /* KeyboardLayout.swift in Sources */,
 				ECD0F4891C170D2E00262128 /* Utilities.swift in Sources */,
+				ECF998C21C1D576A005DCEE2 /* TOMSMorphingLabel.m in Sources */,
 				ECD0F48B1C170D2E00262128 /* CatboardBanner.swift in Sources */,
 				ECD0F4741C170D0900262128 /* DefaultKeyboard.swift in Sources */,
 				ECD0F46F1C170CFC00262128 /* ForwardingView.swift in Sources */,
 				ECD0F4951C17610000262128 /* Translator.swift in Sources */,
+				ECF998C41C1D576A005DCEE2 /* README.md in Sources */,
 				ECD0F47F1C170D1A00262128 /* ImageKey.swift in Sources */,
 				ECD0F4751C170D0900262128 /* DirectionEnum.swift in Sources */,
 				ECD0F4851C170D1A00262128 /* Shapes.swift in Sources */,
 				ECD0F48A1C170D2E00262128 /* Catboard.swift in Sources */,
 				ECD0F4811C170D1A00262128 /* KeyboardConnector.swift in Sources */,
+				ECF998B61C1D572C005DCEE2 /* TOMSSuggestionBarLayout.m in Sources */,
 				ECD0F4831C170D1A00262128 /* DefaultSettings.swift in Sources */,
+				ECF998B31C1D572C005DCEE2 /* TOMSSuggestionBar.m in Sources */,
+				ECF998C11C1D576A005DCEE2 /* NSString+Morphing.m in Sources */,
+				ECF998B51C1D572C005DCEE2 /* TOMSSuggestionBarController.m in Sources */,
 				ECD0F46D1C170CFC00262128 /* KeyboardInputTraits.swift in Sources */,
+				ECF998B81C1D572C005DCEE2 /* UIControl+TOMSSuggestionBar.m in Sources */,
 				ECD0F47E1C170D1A00262128 /* KeyboardKey.swift in Sources */,
 				ECD0F4911C1757AA00262128 /* ManglishKeyboard.swift in Sources */,
+				ECF998B71C1D572C005DCEE2 /* TOMSSuggestionBarView.m in Sources */,
 				ECD0F4801C170D1A00262128 /* KeyboardKeyBackground.swift in Sources */,
 				ECD0F46C1C170CFB00262128 /* KeyboardViewController.swift in Sources */,
 			);

@@ -13,6 +13,24 @@ class ManglishKeyboard: KeyboardViewController {
     var currentWord : String = ""
     var previousInsert :String = ""
     
+    override func loadView() {
+        super.loadView()
+        
+//        if let aBanner = self.createBanner() {
+//            aBanner.hidden = true
+//            self.view.insertSubview(aBanner, belowSubview: self.forwardingView)
+//            self.bannerView = aBanner
+//        }
+        
+       let suggestionsBar = TOMSSuggestionBarView(frame: CGRectMake(0,0,view.bounds.width,40), numberOfSuggestionFields: 3)
+        self.view.insertSubview(suggestionsBar, aboveSubview: self.forwardingView)
+//        suggestionsBar.
+        
+//        self.suggestionBarView = [[TOMSSuggestionBarView alloc] initWithFrame:[TOMSSuggestionBar suggestionBarFrame]
+//            numberOfSuggestionFields:3];
+        
+    }
+    
     override func setupKeys() {
         super.setupKeys()
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) { () -> Void in
